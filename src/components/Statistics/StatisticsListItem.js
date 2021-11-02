@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Style from "./Stat.module.css";
+import Style from "./StatisticsListItem.module.css";
 
 function changeColor() {
   let r = Math.floor(Math.random(3) * 200 + 50);
@@ -11,12 +11,10 @@ function changeColor() {
 
 function Stat({ label, percentage }) {
   return (
-    <>
-      <li className={Style.item} style={{ backgroundColor: changeColor() }}>
-        <span className={Style.label}>{label}</span>
-        <span className={Style.percentage}>{percentage}%</span>
-      </li>
-    </>
+    <li className={Style.item} style={{ backgroundColor: changeColor() }}>
+      <span className={Style.label}>{label}</span>
+      <span className={Style.percentage}>{percentage}%</span>
+    </li>
   );
 }
 Stat.propTypes = {

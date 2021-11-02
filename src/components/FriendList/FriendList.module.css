@@ -1,10 +1,17 @@
 .friends {
-  width: 270px;
+  width: 350px;
+  margin-top: 10px;
+
+  box-shadow: 1px 1px 5px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .titleContainer {
-  padding: 10px 0px 10px 0px;
-
+  padding-top: 0;
+  margin-top: 0;
   background-color: #fff;
 }
 
@@ -12,4 +19,9 @@
   font-size: 18px;
   text-align: center;
   text-transform: uppercase;
+}
+
+.friendsList {
+  width: 330px;
+  margin-top: 0;
 }

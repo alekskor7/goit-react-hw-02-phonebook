@@ -1,9 +1,8 @@
 import React from "react";
 import Profile from "./components/SocialProfile/Profile";
-import Statistics from "./components/Statistics/Statistics";
+import Statistics from "./components/Statistics/StatisticsList";
 import FriendList from "./components/FriendList/FriendList";
-import FriendListItem from './components/FriendList/FriendListItem';
-import TransactionHistory from "./components/TransactionHistory/TransactionHistory";
+import TransactionTable from "./components/TransactionHistory/TransactionTable";
 import data from "./data/user.json";
 import statisticalData from "./data/statistical-data.json";
 import friends from "./data/friends.json";
@@ -12,7 +11,6 @@ import Style from "./App.module.css";
 
 function App() {
   return (
-    <>
       <div className={Style.wrapper}>
         <div className={Style.item}>
           <Profile users={data} />
@@ -21,16 +19,13 @@ function App() {
           <Statistics stats={statisticalData} title="Upload stats" />
         </div>
         <div className={Style.item}>
-          <FriendList>
-            <FriendListItem friends={friends} />
-          </FriendList>
+          <FriendList friends={friends} />
         </div>
         <div className={Style.item}>
-          <TransactionHistory items={transactions} />
+          <TransactionTable items={transactions} />
         </div>
       </div>
-    </>
-  );
+   );
 }
 
 export default App;
