@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import uuid from "react-uuid";
 import ContactForm from "./components/ContactForm/ContactForm";
-import Filter from "./components/ContactFilter/ContactFilter";
+import Filter from "./components/Filter/Filter";
 import ContactList from "./components/ContactList/ContactList";
 
 class App extends Component {
