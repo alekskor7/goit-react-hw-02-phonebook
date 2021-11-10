@@ -1,14 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import Style from "./ContactListItem.module.css";
 
-class Contact extends Component {
-  state = {
-    id: this.props.id,
-  };
-  render() {
-    const { id, name, number, onDeleteContact } = this.props;
-    return (
+export default function ContactListItem({ id, name, number, onDeleteContact }) {
+return (
       <li id={id} className={Style.contact}>
         <p className={Style.name}>{name}</p>
         <p className={Style.number}>{number}</p>
@@ -20,12 +15,10 @@ class Contact extends Component {
         </button>
       </li>
     );
-  }
 }
-Contact.propTypes = {
-  id: PropTypes.string,
-  name: PropTypes.string,
-  number: PropTypes.string,
+ContactListItem.propTypes = {
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  number: PropTypes.string.isRequired,
   onDeleteContact: PropTypes.func.isRequired,
 };
-export default Contact;

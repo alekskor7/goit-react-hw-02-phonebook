@@ -81,7 +81,7 @@ class App extends Component {
 
         <h2>Contacts</h2>
         <Filter filter={filter} onFilter={this.filterHandler} />
-        <ContactList contacts={contacts} onDelete={this.deleteContact} />
+        <ContactList contacts={contacts} onDeleteContact={this.deleteContact} />
      </>
     );
   }

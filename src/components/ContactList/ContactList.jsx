@@ -1,27 +1,24 @@
-import { Component } from "react";
-import Contact from "./ContactListItem";
+// import { Component } from "react";
+import ContactListItem from "./ContactListItem";
 import PropTypes from "prop-types";
 import Style from "./ContactList.module.css";
 
-class ContactList extends Component {
-  render() {
-    const contacts = this.props.contacts;
-    const deleteContact = this.props.onDelete;
-    return (
-      <ul className={Style.contactList}>
+export default function ContactList({ contacts, onDeleteContact }) {
+  return (
+    <ul className={Style.contactList}>
         {contacts.map((contact) => (
-          <Contact
+          <ContactListItem
             key={contact.id}
             id={contact.id}
             name={contact.name}
             number={contact.number}
-            onDeleteContact={deleteContact}
+            onDeleteContact={onDeleteContact}
           />
         ))}
       </ul>
     );
-  }
-}
+};
+
 ContactList.propTypes = {
   contacts: PropTypes.arrayOf(
     PropTypes.shape({
@@ -30,6 +27,5 @@ ContactList.propTypes = {
       number: PropTypes.string,
     })
   ).isRequired,
-  onDelete: PropTypes.func.isRequired,
+  onDeleteContact: PropTypes.func.isRequired,
 };
-export default ContactList;
